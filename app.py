@@ -8,10 +8,14 @@ app = Flask(__name__)
 _data = DataHandler()
 _helpers = Helpers()
 
+@app.errorhandler(404)
+def not_found(e): 
+    return jsonify({'message' : 'Page not found!'}), 404
+
 @app.route('/', methods=['GET', 'POST', 'PUT', 'DELETE'])
 def home():
     res = { 'message' : 'Welcome to Home Page' }
-    return res
+    return jsonify(res), 200
 
 @app.route('/users', methods=['POST'])
 def create_user():
