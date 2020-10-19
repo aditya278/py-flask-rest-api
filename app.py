@@ -15,7 +15,13 @@ def not_found(e):
 
 @app.route('/', methods=['GET', 'POST', 'PUT', 'DELETE'])
 def home():
-    res = { 'message' : 'Welcome to Home Page' }
+    res = { 
+        'message' : 'Welcome to Home Page. Use these Routes in POSTMAN',
+        'POST' : 'https://py-flask-restapi.herokuapp.com/users -> firstName, lastName, email, phone and password in request body',
+        'GET' : 'https://py-flask-restapi.herokuapp.com/users?phone=(phone_number_here)',
+        'PUT' : 'https://py-flask-restapi.herokuapp.com/users -> phone(required) and other optional fields in request body',
+        'DELETE' : 'https://py-flask-restapi.herokuapp.com/users?phone=(phone_number_here)'
+    }
     return jsonify(res), 200
 
 @app.route('/users', methods=['POST'])
