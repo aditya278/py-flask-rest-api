@@ -44,10 +44,10 @@ class DataHandler:
         else:
             return False
 
-_data = DataHandler()
-_data.create('users', '12345','{ "name" : "Adi", "phone" : "123456" }')
-print(_data.read('users', '12345'))
-_data.update('users', '12345','{ "name" : "Aditya", "phone" : "123456" }')
-print(_data.read('users', '12345'))
+# _data = DataHandler()
+# _data.create('users', '12345','{ "name" : "Adi", "phone" : "123456" }')
+# print(_data.read('users', '12345'))
+# _data.update('users', '12345','{ "name" : "Aditya", "phone" : "123456" }')
+# print(_data.read('users', '12345'))
 # _data.delete('users', '12345')
 # print(_data.read('users', '12345'))
